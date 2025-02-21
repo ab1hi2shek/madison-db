@@ -58,19 +58,19 @@ curl -X DELETE "http://localhost:8080/store/name"
 ---
 
 ## **📌 Development Phases Overview**
-| **Phase** | **Focus** | **Timeline** |
-|-----------|----------|-------------|
-| **1** | Data Persistence & Recovery | 2 Weeks |
-| **2** | Read Performance Optimization | 3 Weeks |
-| **3** | Write Scaling & Sharding | 3 Weeks |
-| **4** | Multi-Node Distribution & Clustering | 4 Weeks |
-| **5** | Transactions & Conflict Resolution | 3 Weeks |
-| **6** | Advanced API Features | 2 Weeks |
-| **7** | Benchmarking & Optimization | 2 Weeks |
+| **Phase** | **Focus** |
+|-----------|----------|
+| **1** | Data Persistence & Recovery
+| **2** | Read Performance Optimization
+| **3** | Write Scaling & Sharding
+| **4** | Multi-Node Distribution & Clustering
+| **5** | Transactions & Conflict Resolution
+| **6** | Advanced API Features |
+| **7** | Benchmarking & Optimization |
 
 ---
 
-## **🟢 Phase 1: Data Persistence & Recovery (2 Weeks)**  
+## **🟢 Phase 1: Data Persistence & Recovery**  
 📌 **Goal:** Ensure durability, crash recovery, and efficient storage.  
 ✅ **Outcome:** MadisonDB should recover from crashes using WAL replay and manage SSTables efficiently.  
 
@@ -95,7 +95,7 @@ curl -X DELETE "http://localhost:8080/store/name"
 
 ---
 
-## **🟡 Phase 2: Read Performance Optimization (3 Weeks)**  
+## **🟡 Phase 2: Read Performance Optimization**  
 📌 **Goal:** Improve read efficiency by avoiding unnecessary SSTable lookups.  
 ✅ **Outcome:** MadisonDB should **return results faster** by using Bloom Filters and caching.  
 
@@ -121,7 +121,7 @@ curl -X DELETE "http://localhost:8080/store/name"
 
 ---
 
-## **🟠 Phase 3: Write Optimization & Scaling (3 Weeks)**  
+## **🟠 Phase 3: Write Optimization & Scaling**  
 📌 **Goal:** Scale writes efficiently while keeping data consistent.  
 ✅ **Outcome:** MadisonDB should handle **higher write loads with batching & sharding**.  
 
@@ -146,7 +146,7 @@ curl -X DELETE "http://localhost:8080/store/name"
 
 ---
 
-## **🟣 Phase 4: Multi-Node Distribution & Clustering (4 Weeks)**  
+## **🟣 Phase 4: Multi-Node Distribution & Clustering**  
 📌 **Goal:** Support **replication & automatic node discovery** for fault tolerance.  
 ✅ **Outcome:** MadisonDB should **run across multiple nodes** for high availability.  
 
@@ -157,7 +157,7 @@ curl -X DELETE "http://localhost:8080/store/name"
 
 ---
 
-## **🟤 Phase 5: Transactions & Conflict Resolution (3 Weeks)**  
+## **🟤 Phase 5: Transactions & Conflict Resolution**  
 📌 **Goal:** Allow **multi-key transactions & conflict resolution**.  
 ✅ **Outcome:** MadisonDB should support **atomic updates across multiple keys**.  
 
@@ -168,7 +168,7 @@ curl -X DELETE "http://localhost:8080/store/name"
 
 ---
 
-## **🔵 Phase 6: Exposing Advanced API Features (2 Weeks)**  
+## **🔵 Phase 6: Exposing Advanced API Features**  
 📌 **Goal:** Add advanced features like **range queries, pagination, and indexing**.  
 ✅ **Outcome:** MadisonDB should **support efficient querying beyond simple key-value lookups**.  
 
@@ -179,7 +179,7 @@ curl -X DELETE "http://localhost:8080/store/name"
 
 ---
 
-## **🟢 Phase 7: Benchmarking & Stress Testing (2 Weeks)**
+## **🟢 Phase 7: Benchmarking & Stress Testing**
 📌 **Goal:** Ensure **MadisonDB is production-ready** with real-world performance tests.  
 ✅ **Outcome:** MadisonDB should handle **millions of keys efficiently**.  
 
