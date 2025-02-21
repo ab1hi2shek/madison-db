@@ -16,6 +16,8 @@ public class LSMTree {
         this.wal = wal;
         this.sstables = new ArrayList<>();
         this.sstables.add(sstable);
+
+        replayWAL();
     }
 
     public void put(String key, String value) {
@@ -25,6 +27,7 @@ public class LSMTree {
         // if memtable is full, flush the database entries to SStable.
         if (memtable.isFull()) {
             flushToSSTable();
+            wal.clear(); // Clear WAL after flushing to SSTable
         }
     }
 
@@ -44,7 +47,7 @@ public class LSMTree {
         return null;
     }
 
-    public void flushToSSTable() {
+    private void flushToSSTable() {
         if (memtable.getData().isEmpty()) {
             System.out.println("Flush aborted: Memtable is empty.");
             return;
@@ -55,5 +58,13 @@ public class LSMTree {
 
         sstables.add(newSSTable);
         memtable.clear();
+    }
+
+    private void replayWAL() {
+        List<String[]> entries = wal.readAll();
+        for (String[] entry : entries) {
+            memtable.put(entry[0], entry[1]);
+        }
+        System.out.println("✅ WAL Replay Complete. for file items: " + entries.size());
     }
 }
